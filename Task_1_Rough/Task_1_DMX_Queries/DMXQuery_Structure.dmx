@@ -1,0 +1,35 @@
+CREATE MINING STRUCTURE [InfectionRiskStructure]
+(
+    [Survey_ID] LONG KEY,
+    -- Demographical Attributes (Participant)
+    [Gender] TEXT DISCRETE,
+    [Age] TEXT DISCRETE,
+    [Height] DOUBLE DISCRETE,
+    [Weight] DOUBLE DISCRETE,
+    [Bmi] DOUBLE DISCRETE,
+    [BloodType] TEXT DISCRETE,
+    [Insurance] TEXT DISCRETE,
+    [Race] TEXT DISCRETE,
+    -- COVID-related Attributes (Response)
+    [Smoking] TEXT DISCRETE,
+    [Contact_count] LONG DISCRETE,
+    [House_count] LONG DISCRETE,
+    [Public_transport_count] LONG DISCRETE,
+    [Covid19_symptoms] LONG DISCRETE,
+    [Covid19_contact] LONG DISCRETE,
+    [Asthma] LONG DISCRETE,
+    [Kidney_disease] LONG DISCRETE,
+    [Liver_disease] LONG DISCRETE,
+    [Compromised_immune] LONG DISCRETE,
+    [Heart_disease] LONG DISCRETE,
+    [Lung_disease] LONG DISCRETE,
+    [Diabetes] LONG DISCRETE,
+    [Hiv_positive] LONG DISCRETE,
+    [Hypertension] LONG DISCRETE,
+    [Other_chronic] LONG DISCRETE,
+    [Nursing_home] LONG DISCRETE,
+    [Health_worker] LONG DISCRETE,
+    -- Predictable Attribute
+    [Risk_infection_level] TEXT DISCRETE
+)
+WITH HOLDOUT (30 PERCENT)

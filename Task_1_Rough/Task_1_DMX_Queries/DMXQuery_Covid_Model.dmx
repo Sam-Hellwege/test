@@ -1,0 +1,34 @@
+DROP MINING MODEL COVIDModel
+
+GO
+
+ALTER MINING STRUCTURE [InfectionRiskStructure]
+ADD MINING MODEL [COVIDModel]
+(
+    [Survey_ID],
+    [Smoking],
+    [Contact_count],
+    [House_count],
+    [Public_transport_count],
+    [Covid19_symptoms],
+    [Covid19_contact],
+    [Asthma],
+    [Kidney_disease],
+    [Liver_disease],
+    [Compromised_immune],
+    [Heart_disease],
+    [Lung_disease],
+    [Diabetes],
+    [Hiv_positive],
+    [Hypertension],
+    [Other_chronic],
+    [Nursing_home],
+    [Health_worker],
+    [Risk_infection_level] PREDICT
+)
+USING Microsoft_Association_Rules
+WITH DRILLTHROUGH
+
+GO 
+
+INSERT INTO [COVIDModel]

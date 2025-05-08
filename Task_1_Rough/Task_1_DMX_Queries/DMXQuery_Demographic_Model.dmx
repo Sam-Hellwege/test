@@ -1,0 +1,24 @@
+DROP MINING MODEL DemographicModel
+
+GO
+
+ALTER MINING STRUCTURE [InfectionRiskStructure]
+ADD MINING MODEL [DemographicModel]
+(
+    [Survey_ID],
+    [Gender],
+    [Age],
+    [Height],
+    [Weight],
+    [Bmi],
+    [BloodType],
+    [Insurance],
+    [Race],
+    [Risk_infection_level] PREDICT
+)
+USING Microsoft_Association_Rules
+WITH DRILLTHROUGH
+
+GO 
+
+INSERT INTO [DemographicModel]
